@@ -8,14 +8,13 @@
 # * \tmp
 #
 # First download this file
-# curl -P "${docker_directory}" https://github.com/milcom/docker-deploy/install-docker-deploy.sh
-#
+# curl -L https://github.com/milcom/docker-build-tools/install-docker-build.sh > install-docker-build.sh
 # Then run it . . .
 #
 # Main Parameters:
 # -p - path to projects docker directory ex: pat/to/project/docker
 #
-#   . _scripts/_build-image.sh -d "/home/mrjohndoe/source/foo/docker"
+#   . install-docker-build.sh -d "/home/mrjohndoe/source/foo/docker"
 #
 export docker_directory=""
 
@@ -47,9 +46,9 @@ then
 fi
 
 # Download the package and unzip it.
-curl -P "${docker_directory}" https://github.com/milcom/docker-deploy/archive/master.tar.gz
-tar -xvzf "${docker_directory}/master.tar.gz" -C "${docker_directory}/"
-rm -rf "${docker_directory}/master.tar.gz"
+curl -L https://github.com/milcom/docker-build-tools/archive/master.tar.gz > "${docker_directory}/install-docker-build.tar.gz"
+tar -xvzf "${docker_directory}/install-docker-build.tar.gz" -C "${docker_directory}/"
+rm -rf "${docker_directory}/install-docker-build.tar.gz"
 
 # Create a work directory for the compile tools.
 if [ ! -d "${docker_directory}/tmp" ]
