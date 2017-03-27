@@ -53,7 +53,7 @@ rm -rf "/tmp/docker-build-tools-master"
 rm -rf "/tmp/install-docker-build.tar.gz"
 
 # Create a work directory for the compile tools.
-if [ ! -d "${docker_directory}/tmp" ]
-then
- mkdir "${docker_directory}/tmp"
-fi
+# if [ ! -d "${docker_directory}/tmp" ]
+# then
+#  mkdir "${docker_directory}/tmp"
+# fi
