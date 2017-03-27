@@ -2,19 +2,19 @@
 
 # Run this command to install the docker tools into your docker directory
 #
-# Make sure you exclude the following in your git ignore file
-# * \_scripts
-# * \_tmeplates
-# * \tmp
+# Make sure you exclude the following in your git ignore file under your docker directory:
+# * _scripts
+# * _tmeplates
+# * tmp
 #
 # First download this file
-# curl -s -L  https://github.com/milcom/docker-build-tools/raw/master/install-docker-deploy.sh > install-docker-deploy.sh
+# curl -s -L  https://github.com/milcom/docker-build-tools/raw/master/install-docker-build.sh > install-docker-build.sh
 # Then run it . . .
 #
-# Main Parameters:
-# -p - path to projects docker directory ex: pat/to/project/docker
+#  . install-docker-build.sh -d "/home/mrjohndoe/source/foo/docker"
 #
-#   . install-docker-build.sh -d "/home/mrjohndoe/source/foo/docker"
+# Parameters:
+# -p - path to projects docker directory ex: pat/to/project/docker
 #
 export docker_directory=""
 
@@ -45,7 +45,7 @@ then
   return
 fi
 
-# Download the package and unzip it.
+# Download the package and move in the files.
 curl -s -L https://github.com/milcom/docker-build-tools/archive/master.tar.gz > "/tmp/install-docker-build.tar.gz"
 tar -xvzf "/tmp/install-docker-build.tar.gz" -C "/tmp"
 mv /tmp/docker-build-tools-master/_* "${docker_directory}"
