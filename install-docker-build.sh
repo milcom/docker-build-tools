@@ -8,7 +8,7 @@
 # * \tmp
 #
 # First download this file
-# curl -L https://github.com/milcom/docker-build-tools/install-docker-build.sh > install-docker-build.sh
+# curl -s -L https://github.com/milcom/docker-build-tools/install-docker-build.sh > install-docker-build.sh
 # Then run it . . .
 #
 # Main Parameters:
@@ -46,9 +46,11 @@ then
 fi
 
 # Download the package and unzip it.
-curl -L https://github.com/milcom/docker-build-tools/archive/master.tar.gz > "${docker_directory}/install-docker-build.tar.gz"
-tar -xvzf "${docker_directory}/install-docker-build.tar.gz" -C "${docker_directory}/"
-rm -rf "${docker_directory}/install-docker-build.tar.gz"
+curl -s -L https://github.com/milcom/docker-build-tools/archive/master.tar.gz > "/tmp/install-docker-build.tar.gz"
+tar -xvzf "/tmp/install-docker-build.tar.gz" -C "/tmp"
+mv /tmp/docker-build-tools-master/_* "${docker_directory}"
+rm -rf "/tmp/docker-build-tools-master"
+rm -rf "/tmp/install-docker-build.tar.gz"
 
 # Create a work directory for the compile tools.
 if [ ! -d "${docker_directory}/tmp" ]
