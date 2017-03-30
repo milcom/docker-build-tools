@@ -14,7 +14,7 @@
 #  . install-docker-build.sh -d "/home/mrjohndoe/source/foo/docker"
 #
 # Parameters:
-# -p - path to projects docker directory ex: pat/to/project/docker
+# -d - path to projects docker directory ex: pat/to/project/docker
 #
 export docker_directory=""
 
