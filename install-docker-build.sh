@@ -11,7 +11,7 @@
 # curl -s -L  https://github.com/milcom/docker-build-tools/raw/master/install-docker-build.sh > install-docker-build.sh
 # Then run it . . .
 #
-#  . install-docker-build.sh -d "/home/mrjohndoe/source/foo/docker"
+#  chmod +x install-docker-build.sh && ./install-docker-build.sh -d "/home/mrjohndoe/source/foo/docker"
 #
 # Parameters:
 # -d - path to projects docker directory ex: pat/to/project/docker
